@@ -393,9 +393,9 @@ spawn(function()
 								local Part=Parts[i];
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
 								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,0)
+								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/2.5,0)
 								*CFrame.Angles(0,math.rad(90),0)
-								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2)
+								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/1,math.sin((tick()+i)*5)/2)
 								,.1);						
 							end;
 						elseif script:FindFirstChild(Player.Name) then
@@ -628,7 +628,7 @@ NewCommand("Music","The scripts music player, self explanatory.",4,{"m","music",
 		if Flags["m"] then
 			local Name=Flags["m"][1]:sub(2);
 			local Http=Core.Services.Http;
-			local Query="http://search.roblox.com/catalog/json?Keyword="..tostring(Name).."&Category=9&ResultsPerPage=20";
+			local Query="https://rprxy.xyz/proxy/api/SearchMusic/"..tostring(Name).."&ResultsPerPage=20";
 			local Assets=Http:JSONDecode(Http:GetAsync(Query));
 			function List(Player)
 				wait(DestroyTablets(Player));
