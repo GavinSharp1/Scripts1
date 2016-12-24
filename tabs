@@ -83,7 +83,7 @@ Core={
 	Settings={
 		DefaultBetKey="@";
 		DefaultColour="Bright green";
-		Owner=game:GetService("Players"):FindFirstChild("gavinsharp100"); --//Your name here!
+		Owner=game:GetService("Players"):FindFirstChild("gavinsharp100");
 	};
 	Ranks={
 		[1]="Guest";
@@ -271,13 +271,22 @@ local function AddPart(Text,Colour,Player,Function)
 	end;
 	local Part=Instance.new("Part",script);
 	Part.CanCollide=false;
-Part.Transparency = 0.6
+Part.Transparency = 0.5
 	Part.Anchored=true;
 	Part.FormFactor="Custom";
-	Part.Size=Vector3.new(2,2,0);
-        I = Instance.new("Decal")
-        I.Texture = "http://www.roblox.com/asset/?id=194075924"
-        I.Parent = Part
+	Part.Size=Vector3.new(2,2,2);
+      
+local Orb = Instance.new("Part",workspace)
+Orb.BottomSurface = "Smooth"
+Orb.TopSurface = "Smooth"
+Orb.Shape = "Ball"
+Orb.Name = "Orb"
+Orb.Transparency = 0
+Orb.FormFactor = "Custom"
+Orb.Size = Vector3.new(1,1,1)
+Orb.Locked = true
+Orb.Anchored = true
+        Orb.Parent = Part
 	Part.CFrame=CFrame.new(Adorn.p);
 	Part.BackSurface="SmoothNoOutlines";
 	Part.BottomSurface="SmoothNoOutlines";
@@ -381,7 +390,7 @@ spawn(function()
 	local Number=1;
 	local Player=nil;
 	game:GetService("RunService").Heartbeat:connect(function()
-		Number=Number+0.0025;
+		Number=Number+0.50;
 		for i,v in pairs(game.Players:GetPlayers()) do
 			for a,b in pairs(Core.Players) do
 				if v.Name==b.Name then
@@ -392,20 +401,20 @@ spawn(function()
 								local Parts=Core.Players[Player.Name].Data.Tablets;
 								local Part=Parts[i];
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
-								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/2.5,0)
+								*CFrame.Angles(0,math.rad((180/#Parts)*i)+Number,0)
+								*CFrame.new(3+#Parts,math.sin((tick()+i)*6)/1.1,0)
 								*CFrame.Angles(0,math.rad(90),0)
-								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/1,math.sin((tick()+i)*5)/2)
+								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/1,math.sin((tick()+i)*5)/1)
 								,.1);						
 							end;
 						elseif script:FindFirstChild(Player.Name) then
 							local Parts=Core.Players[Player.Name].Data.Tablets;
 							local Part=Parts[i];
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
-							*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-							*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,0)
+							*CFrame.Angles(0,math.rad((180/#Parts)*i)+Number,0)
+							*CFrame.new(3+#Parts,math.sin((tick()+i)*6)/1.1,0)
 							*CFrame.Angles(0,math.rad(90),0)
-							*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2)
+							*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/1,math.sin((tick()+i)*5)/1)
 							,.1);
 						end;
 					end;
@@ -810,9 +819,9 @@ NewCommand("Forcefield","Adds a forcefield to <player/all>",2,{"ff"},{"plr","all
 	end);
 end);
 
-NewCommand("Doge","Lel",1,{'doge'},{},function(Message,Flags,Player,PlayerRank)
+NewCommand("doge","Lel",1,{'doge'},{},function(Message,Flags,Player,PlayerRank)
 -- She is so kawai isn't she ? :)
-bl = Instance.new("BillboardGui",workspace.GetAllChildren())
+bl = Instance.new("BillboardGui",workspace.GetChildren())
 bl.Size = UDim2.new(1,0,1,0)
 bl.AlwaysOnTop = true
 img = Instance.new("ImageLabel", bl)
