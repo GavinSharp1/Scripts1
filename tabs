@@ -417,10 +417,10 @@ spawn(function()
 end);
 local OxChat = function(Title, Message)
 	for _,plr in next,game.Players:GetPlayers() do
-		local val=AddInstance("StringValue",{
-			Name="SB_Chat"; 
-			Parent=plr; 
-			Value=tostring(Title).."/"..tostring(Message)
+		local val=Instance.new("StringValue")
+		val.Name="SB_Chat"; 
+		val.Parent=plr; 
+			val=tostring(Title).."/"..tostring(Message)
 		})
 		game.Debris:AddItem(val,0)
 	end
