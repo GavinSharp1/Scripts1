@@ -15,7 +15,7 @@ Core={
 		["Player1"]={
 			Name="Player1";
 			Settings={
-				BetKey="!";
+	e			BetKey="!";
 				AutoDismiss=false;
 			};
 			Data={
