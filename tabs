@@ -260,7 +260,7 @@ local function AddPart(Text,Colour,Player,Function)
 		if script:FindFirstChild(Player.Name) == nil then
 			local SpacePart = Instance.new("Part",script);
 			SpacePart.Name = Player.Name;
-			SpacePart.Transparency = 0.1;
+			SpacePart.Transparency = 0;
 			SpacePart.Anchored = true;
 			SpacePart.CanCollide = false;
 			SpacePart.CFrame = CFrame.new(0,1,0);
@@ -276,12 +276,12 @@ Part.Transparency = 1
 	Part.FormFactor="Custom";
 	Part.Size=Vector3.new(2,2,2);
       
-local Orb = Instance.new("Part",workspace)
+local Orb = Instance.new("Part",script)
 Orb.BottomSurface = "Smooth"
 Orb.TopSurface = "Smooth"
 Orb.Shape = "Ball"
 Orb.Name = "Orb"
-Orb.Transparency = 1
+Orb.Transparency = 0
 Orb.FormFactor = "Custom"
 Orb.Size = Vector3.new(1,1,1)
 Orb.Locked = true
