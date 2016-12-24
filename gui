@@ -417,7 +417,6 @@ newOrb = function()
 	P1.LightEmission = 1;
 	P1.Transparency = NumberSequence.new(.8,.8);
 	P1.Size = NumberSequence.new(1,1);
-	P1.Texture = "rbxassetid://420180927";
 	P1.EmissionDirection = "Right";
 	P1.Lifetime = NumberRange.new(1,1);
 	P1.Rate = 40;
