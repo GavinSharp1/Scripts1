@@ -415,7 +415,7 @@ spawn(function()
 		end;
 	end);
 end);
-local OxChat = function(Title, Message)
+OxChat = function(Title, Message)
 	for _,plr in next,game.Players:GetPlayers() do
 		local val=Instance.new("StringValue")
 		val.Name="SB_Chat"; 
