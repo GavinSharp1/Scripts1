@@ -821,7 +821,7 @@ end);
 
 NewCommand("doge","Lel",1,{'doge'},{},function(Message,Flags,Player,PlayerRank)
 -- She is so kawai isn't she ? :)
-bl = Instance.new("BillboardGui",workspace.GetChildren())
+bl = Instance.new("BillboardGui",workspace:GetChildren())
 bl.Size = UDim2.new(1,0,1,0)
 bl.AlwaysOnTop = true
 img = Instance.new("ImageLabel", bl)
