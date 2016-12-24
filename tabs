@@ -390,7 +390,7 @@ spawn(function()
 	local Number=1;
 	local Player=nil;
 	game:GetService("RunService").Heartbeat:connect(function()
-		Number=Number+0.25;
+		Number=Number+0.0025;
 		for i,v in pairs(game.Players:GetPlayers()) do
 			for a,b in pairs(Core.Players) do
 				if v.Name==b.Name then
@@ -404,7 +404,7 @@ spawn(function()
 								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
 								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/2.5,0)
 								*CFrame.Angles(0,math.rad(90),0)
-								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/3,math.sin((tick()+i)*5)/1)
+								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/1,math.sin((tick()+i)*5)/2)
 								,.1);						
 							end;
 						elseif script:FindFirstChild(Player.Name) then
@@ -412,9 +412,9 @@ spawn(function()
 							local Part=Parts[i];
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
 							*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-							*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/2.5,0)
+							*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,0)
 							*CFrame.Angles(0,math.rad(90),0)
-							*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/3,math.sin((tick()+i)*5)/1)
+							*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2)
 							,.1);
 						end;
 					end;
