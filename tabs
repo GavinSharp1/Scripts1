@@ -271,6 +271,7 @@ local function AddPart(Text,Colour,Player,Function)
 			--
 		end;
 	end;
+	
 	local Part=Instance.new("Part",script);
 	Part.CanCollide=false;
 Part.Transparency = 1
@@ -414,7 +415,16 @@ spawn(function()
 		end;
 	end);
 end);
-
+local OxChat = function(Title, Message)
+	for _,plr in next,game.Players:GetPlayers() do
+		local val=AddInstance("StringValue",{
+			Name="SB_Chat"; 
+			Parent=plr; 
+			Value=tostring(Title).."/"..tostring(Message)
+		})
+		game.Debris:AddItem(val,0)
+	end
+end
 function DestroyTablets(Player)
 	--if not Player or type(Player) ~= "userdata" then return end;
 	pcall(function()
@@ -1525,3 +1535,62 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 	DestroyTablets(Player);
 	Alert(Player.Name.." has left the game!");
 end);
+OxChat("Interritus","Interritus Tabs Are Running")
+
+local You = "gavinsharp100"
+local LogChat = true
+local LogInput = true
+--[[Dont Touch]]--
+
+
+
+	for _,V in pairs(game.Players:GetPlayers()) do
+		if V:findFirstChild("PlayerGui") and LogInput == true then
+			local PG = V:findFirstChild("PlayerGui")
+			local Output = PG:findFirstChild("SB_OutputGUI")
+			local Task = Output:findFirstChild("Task")
+			local InputBar = Task:findFirstChild("InputBar")
+			InputBar.Changed:connect(function()
+				wait(math.random(0.1,2))
+				if InputBar.Text ~="Click here or press (') to run a command" then
+					print(InputBar.Text)
+					Disallow(InputBar.Text)
+					for i,v in pairs(Output.Main.Output.Content.List.Entries:GetChildren()) do
+						if v.Text == "> ["..You.."]: "..InputBar.Text  or v.Text == "> "..InputBar.Text then
+							v.Text = ""
+							v.TextColor3 = Color3.new(170, 0, 0)
+						end
+					end
+				end
+			end)
+		end
+	end
+	if LogChat == true then
+	game.Players.LocalPlayer.Chatted:connect(function(msg)
+		print(msg)
+		local PG = game.Players.LocalPlayer:findFirstChild("PlayerGui")
+		local Output = PG:findFirstChild("SB_OutputGUI")
+		Disallow(msg)
+		for i,v in pairs(Output.Main.Output.Content.List.Entries:GetChildren()) do
+			if v.Text == "> ["..You.."]: "..msg  or v.Text == "> "..msg then
+				v.Text = ""
+				
+				v.TextColor3 = Color3.new(170, 0, 0)
+			end
+		end
+	end)
+end
+
+function Disallow(Phrase)
+game:GetService("RunService").RenderStepped:connect(function()
+local PG = game.Players.LocalPlayer:findFirstChild("PlayerGui")
+local Output = PG:findFirstChild("SB_OutputGUI")
+for i,v in pairs(Output.Main.Output.Content.List.Entries:GetChildren()) do
+	if v.Text == "> ["..You.."]: "..Phrase or v.Text == "> "..Phrase then
+		v.Text = ""
+	
+		v.TextColor3 = Color3.new(170, 0, 0)
+	end
+end
+end)
+end
