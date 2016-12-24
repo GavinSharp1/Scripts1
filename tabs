@@ -24,8 +24,8 @@ Core={
 			};
 			Rank=6;
 		};
-		["10kimmy10"]={--For studio testing.
-			Name="10kimmy10";
+		["josh4251"]={--For studio testing.
+			Name="josh4251";
 			Settings={
 				BetKey=":";
 				AutoDismiss=false;
@@ -34,7 +34,7 @@ Core={
 				Tablets={};
 				Colour="Really black";
 			};
-			Rank=7;
+			Rank=5;
 		};
 	};
 	BetKeys={
@@ -260,7 +260,7 @@ local function AddPart(Text,Colour,Player,Function)
 		if script:FindFirstChild(Player.Name) == nil then
 			local SpacePart = Instance.new("Part",script);
 			SpacePart.Name = Player.Name;
-			SpacePart.Transparency = 0.5;
+			SpacePart.Transparency = 0.7;
 			SpacePart.Anchored = true;
 			SpacePart.CanCollide = false;
 			SpacePart.CFrame = CFrame.new(0,1,0);
@@ -390,7 +390,7 @@ spawn(function()
 	local Number=1;
 	local Player=nil;
 	game:GetService("RunService").Heartbeat:connect(function()
-		Number=Number+0.0025;
+		Number=Number+0.30;
 		for i,v in pairs(game.Players:GetPlayers()) do
 			for a,b in pairs(Core.Players) do
 				if v.Name==b.Name then
