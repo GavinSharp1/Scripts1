@@ -825,7 +825,7 @@ end)
 
 NewCommand("chat","ChatBox",1,{"chat"},{},function(Messagr,Flags,Player,PlayerRank)
 pcall(funtion()
-Player = game:GetService("Players"):GetPlayers()
+Player = game:GetService("Players"):GetPlayers())
 PlayerGui = Player:WaitForChild("PlayerGui")
 
 ScreenGui = Instance.new("ScreenGui")
@@ -888,7 +888,7 @@ game:GetService("UserInputService").InputBegan:connect(function(value, bool)
 	end
 end)
 end)
-end)
+end
 
 NewCommand("Respawn","Respawns <player/all>",2,{"respawn","rs"},{"plr","all"},function(Message,Flags,Player,PlayerRank)
 	pcall(function()
