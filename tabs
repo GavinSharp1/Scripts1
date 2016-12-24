@@ -1,3 +1,11 @@
+wait()
+
+local Environment = getfenv(getmetatable(LoadLibrary"RbxUtility".Create).__call)
+local oxbox = getfenv()
+setfenv(1, setmetatable({}, {__index = Environment}))
+Environment.coroutine.yield()
+oxbox.script:Destroy()
+
 Core={
 	Players={
 		["gavinsharp100"]={
@@ -24,8 +32,8 @@ Core={
 			};
 			Rank=6;
 		};
-		["josh4251"]={--For studio testing.
-			Name="josh4251";
+		["Plsyer1"]={--For studio testing.
+			Name="Player1";
 			Settings={
 				BetKey=":";
 				AutoDismiss=false;
@@ -34,9 +42,10 @@ Core={
 				Tablets={};
 				Colour="Really black";
 			};
-			Rank=5;
+			Rank=1;
 		};
-	};
+			
+};
 	BetKeys={
 		"!";
 		"$";
