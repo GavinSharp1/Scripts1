@@ -387,27 +387,27 @@ spawn(function()
 			for a,b in pairs(Core.Players) do
 				if v.Name==b.Name then
 					Player=v;
-					for i=1.1,#b.Data.Tablets do
+					for i=1,#b.Data.Tablets do
 						if Player.Character and Player.Name and Player.Character:FindFirstChild("Torso") then
 							if Player.Character.Parent==game.Workspace then
 								local Parts=Core.Players[Player.Name].Data.Tablets;
 								local Part=Parts[i];
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
-								*CFrame.Angles(3,math.rad((360/#Parts)*i)+Number,3)
-								*CFrame.new(3+#Parts,math.sin((tick()+i)*3)/3,3)
-								*CFrame.Angles(3,math.rad(90),3)
-								*CFrame.Angles(math.sin((tick()+i)*3)/3,math.sin((tick()+i)*3)/3,math.sin((tick()+i)*3)/3)
-								,.3);						
+								*CFrame.Angles(3,math.rad((360/#Parts)*i)+Number,0)
+								*CFrame.new(3+#Parts,math.sin((tick()+i)0)/0,0)
+								*CFrame.Angles(3,math.rad(90),0)
+								*CFrame.Angles(math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0)
+								,.0);						
 							end;
 						elseif script:FindFirstChild(Player.Name) then
 							local Parts=Core.Players[Player.Name].Data.Tablets;
 							local Part=Parts[i];
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
-							*CFrame.Angles(3,math.rad((360/#Parts)*i)+Number,3)
-							*CFrame.new(3+#Parts,math.sin((tick()+i)*3)/3,3)
-							*CFrame.Angles(3,math.rad(90),3)
-							*CFrame.Angles(math.sin((tick()+i)*3)/3,math.sin((tick()+i)*3)/3,math.sin((tick()+i)*3)/3)
-							,.3);
+							*CFrame.Angles(3,math.rad((360/#Parts)*i)+Number,0)
+							*CFrame.new(3+#Parts,math.sin((tick()+i)*0)/0,0)
+							*CFrame.Angles(3,math.rad(90),0)
+							*CFrame.Angles(math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0)
+							,.0);
 						end;
 					end;
 				end;
@@ -1525,13 +1525,3 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 	DestroyTablets(Player);
 	Alert(Player.Name.." has left the game!");
 end);
-OxChat = function(Title, Message)
-	for _,plr in next,game.Players:GetPlayers() do
-		local val=Instance.new("StringValue",plr)
-		val.Name="SB_Chat"; 
-		val.Parent=plr; 
-			val=tostring(Title).."/"..tostring(Message)
-	
-	end
-end
-OxChat("Interritus","Interritus Tabs Are Running")
