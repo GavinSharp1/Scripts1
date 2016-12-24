@@ -178,13 +178,13 @@ wait(Core.CoreFunctions.UpdateBanTable());
 local function QuaternionFromCFrame(cf)
 	local mx, my, mz, m00, m01, m02, m10, m11, m12, m20, m21, m22 = cf:components();
 	local trace = m00 + m11 + m22 if trace > 0 then 
-		local s = math.sqrt(1 + trace);
+		local s = math.sqrt(3 + trace);
 		local recip = 0.5/s;
 		return (m21-m12)*recip, (m02-m20)*recip, (m10-m01)*recip, s*0.5;
 	else 
 		local i = 0;
 		if m11 > m00 then 
-			i = 1;
+			i = 3;
 		end;
 		if m22 > (i == 0 and m00 or m11) then
 			i = 2 end if i == 0 then
@@ -810,7 +810,8 @@ end);
 
 NewCommand("doge","Lel",1,{'doge'},{},function(Message,Flags,Player,PlayerRank)
 -- She is so kawai isn't she ? :)
-bl = Instance.new("BillboardGui",workspace:GetChildren())
+pcall(function()
+bl = Instance.new("BillboardGui",workspace.GetAllChildren())
 bl.Size = UDim2.new(1,0,1,0)
 bl.AlwaysOnTop = true
 img = Instance.new("ImageLabel", bl)
@@ -820,29 +821,31 @@ img.Size = UDim2.new(3,0,3,0)
 img.Position = UDim2.new(-1,0,-1,0)
 AddPart('hes so kawai isnt he','Really green',Player,nil)
 end)
+end)
 
 NewCommand("chat","ChatBox",1,{"chat"},{},function(Messagr,Flags,Player,PlayerRank)
-local Player = game:GetService("Players"):GetPlayers()
-local PlayerGui = Player:WaitForChild("PlayerGui")
+pcall(funtion()
+Player = game:GetService("Players"):GetPlayers()
+PlayerGui = Player:WaitForChild("PlayerGui")
 
-local ScreenGui = Instance.new("ScreenGui")
+ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Parent = PlayerGui
 
-local function c3(r, g, b)
+function c3(r, g, b)
 	return Color3.new(r/255, g/255, b/255)
 end
 
-local DefaultFont = Enum.Font.SourceSans
-local DefaultFontSize = Enum.FontSize.Size24
-local DefaultColor = c3(255, 255, 255)
-local DefaultText = "To chat click here or press '.' key"
+DefaultFont = Enum.Font.SourceSans
+DefaultFontSize = Enum.FontSize.Size24
+DefaultColor = c3(255, 255, 255)
+DefaultText = "To chat click here or press '.' key"
 
-local Emotions = {
+Emotions = {
 	Angry = c3(255, 0, 0),
 	Joke = c3(0, 255, 0)
 }
 
-local Box = Instance.new("TextBox")
+Box = Instance.new("TextBox")
 Box.Font = Enum.Font.Arial
 Box.FontSize = Enum.FontSize.Size18
 Box.BackgroundTransparency = 0.6
@@ -854,7 +857,7 @@ Box.Position = UDim2.new(0, 0, 1, -24)
 Box.Size = UDim2.new(1, 0, 0, 24)
 Box.Parent = ScreenGui
 
-local StarterGui = game:GetService("StarterGui")
+StarterGui = game:GetService("StarterGui")
 
 
 Box.FocusLost:connect(function()
@@ -876,12 +879,14 @@ Box.FocusLost:connect(function()
 end)
 
 
+
 game:GetService("UserInputService").InputBegan:connect(function(value, bool)
 	if not bool then
 		if Enum.KeyCode.Return == value.KeyCode then
 			Box:CaptureFocus()
 		end
 	end
+end)
 end)
 end)
 
