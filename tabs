@@ -390,7 +390,7 @@ spawn(function()
 	local Number=1;
 	local Player=nil;
 	game:GetService("RunService").Heartbeat:connect(function()
-		Number=Number+0.30;
+		Number=Number+0.00001;
 		for i,v in pairs(game.Players:GetPlayers()) do
 			for a,b in pairs(Core.Players) do
 				if v.Name==b.Name then
