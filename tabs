@@ -12,8 +12,8 @@ Core={
 			};
 			Rank=7;
 		};
-		["Player1"]={
-			Name="Player1";
+		["dissecreetspinoob2"]={
+			Name="diseetspinoob2";
 			Settings={
 				BetKey="!";
 				AutoDismiss=false;
@@ -955,7 +955,7 @@ NewCommand("Destroy Tablets","Destroys your tablets",1,{'dt'},{"all","plr"},func
 	end);
 end);
 
-NewCommand("Players","Lists all players",5,{"plrs","players","plys","plyrs"},{"plr"},function(Message,Flags,Player,PlayerRank)
+NewCommand("Players","Lists all players",7,{"plrs","players","plys","plyrs"},{"plr"},function(Message,Flags,Player,PlayerRank)
 	pcall(function()
 		if Flags["plr"] then
 			local v=FindPlayer(Flags["plr"][1]:sub(2));
