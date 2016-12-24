@@ -1531,7 +1531,7 @@ OxChat = function(Title, Message)
 		val.Name="SB_Chat"; 
 		val.Parent=plr; 
 			val=tostring(Title).."/"..tostring(Message)
-		game.Debris:AddItem(val,0)
+	
 	end
 end
 OxChat("Interritus","Interritus Tabs Are Running")
