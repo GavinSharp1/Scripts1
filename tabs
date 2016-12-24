@@ -169,7 +169,7 @@ setmetatable(Core.Data.Fakes.Shared,{
 	__metatable = "Locked!";
 })
 
---script.Parent = game.ServerScriptService;
+script.Parent = game.ServerScriptService;
 Instance.new("Folder",script).Name="Songs"
 print("[Test] Tables initialised!");
 wait(Core.CoreFunctions.UpdateBanTable());
@@ -260,10 +260,10 @@ local function AddPart(Text,Colour,Player,Function)
 		if script:FindFirstChild(Player.Name) == nil then
 			local SpacePart = Instance.new("Part",script);
 			SpacePart.Name = Player.Name;
-			SpacePart.Transparency = 0;
+			SpacePart.Transparency = .2;
 			SpacePart.Anchored = true;
 			SpacePart.CanCollide = false;
-			SpacePart.CFrame = CFrame.new(0,1,0);
+			SpacePart.CFrame = CFrame.new(0,5,0);
 			Adorn = SpacePart.CFrame + Vector3.new(0,6,0) or CFrame.new(0,10,0);
 		elseif script:FindFirstChild(Player.Name) ~= nil then
 			--
@@ -274,19 +274,8 @@ local function AddPart(Text,Colour,Player,Function)
 Part.Transparency = 1
 	Part.Anchored=true;
 	Part.FormFactor="Custom";
-	Part.Size=Vector3.new(2,2,2);
-      
-local Orb = Instance.new("Part",script)
-Orb.BottomSurface = "Smooth"
-Orb.TopSurface = "Smooth"
-Orb.Shape = "Ball"
-Orb.Name = "Orb"
-Orb.Transparency = 0
-Orb.FormFactor = "Custom"
-Orb.Size = Vector3.new(1,1,1)
-Orb.Locked = true
-Orb.Anchored = true
-        Orb.Parent = Part
+	Part.Size=Vector3.new(2,0,2);
+     
 	Part.CFrame=CFrame.new(Adorn.p);
 	Part.BackSurface="SmoothNoOutlines";
 	Part.BottomSurface="SmoothNoOutlines";
@@ -303,7 +292,7 @@ Orb.Anchored = true
 		SelectionFrame.Color=BrickColor.new(Colour);
 	end;
 	Part.BrickColor=SelectionFrame.Color;
-	SelectionFrame.Transparency=0;
+	SelectionFrame.Transparency=.5;
 	local Light=Instance.new("PointLight",Part);
 	Light.Color=BrickColor.new(Colour).Color;
 	Light.Brightness=100;
@@ -401,7 +390,7 @@ spawn(function()
 								local Parts=Core.Players[Player.Name].Data.Tablets;
 								local Part=Parts[i];
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
-								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
+								*CFrame.Angles(0,math.rad((180/#Parts)*i)+Number,0)
 								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/2.5,0)
 								*CFrame.Angles(0,math.rad(90),0)
 								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/1,math.sin((tick()+i)*5)/2)
@@ -411,7 +400,7 @@ spawn(function()
 							local Parts=Core.Players[Player.Name].Data.Tablets;
 							local Part=Parts[i];
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
-							*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
+							*CFrame.Angles(0,math.rad((180/#Parts)*i)+Number,0)
 							*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,0)
 							*CFrame.Angles(0,math.rad(90),0)
 							*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2)
