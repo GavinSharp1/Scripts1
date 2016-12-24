@@ -410,7 +410,6 @@ newOrb = function()
 		Anchored = true;
 		Locked = true;
 		CanCollide = false;
-		Shape = "Cube";
 		Size = Vector3.new(1,1,1)
 	})
 	local P1 = Instance.new("ParticleEmitter")
