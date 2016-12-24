@@ -402,9 +402,9 @@ spawn(function()
 								local Part=Parts[i];
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
 								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/3.3,0)
+								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/2.5,0)
 								*CFrame.Angles(0,math.rad(90),0)
-								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/3,math.sin((tick()+i)*5)/3)
+								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/3,math.sin((tick()+i)*5)/1)
 								,.1);						
 							end;
 						elseif script:FindFirstChild(Player.Name) then
@@ -412,9 +412,9 @@ spawn(function()
 							local Part=Parts[i];
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
 							*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-							*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/3.3,0)
+							*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/2.5,0)
 							*CFrame.Angles(0,math.rad(90),0)
-							*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/3,math.sin((tick()+i)*5)/3)
+							*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/3,math.sin((tick()+i)*5)/1)
 							,.1);
 						end;
 					end;
