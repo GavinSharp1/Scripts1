@@ -169,7 +169,7 @@ setmetatable(Core.Data.Fakes.Shared,{
 	__metatable = "Locked!";
 })
 
-script.Parent = game.ServerScriptService;
+--script.Parent = game.ServerScriptService;
 Instance.new("Folder",script).Name="Songs"
 print("[Test] Tables initialised!");
 wait(Core.CoreFunctions.UpdateBanTable());
@@ -390,21 +390,21 @@ spawn(function()
 								local Parts=Core.Players[Player.Name].Data.Tablets;
 								local Part=Parts[i];
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
-								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-								*CFrame.new(3+#Parts,math.sin((tick()+i)*3)/3,0)
-								*CFrame.Angles(0,math.rad(90),0)
+								*CFrame.Angles(3,math.rad((360/#Parts)*i)+Number,3)
+								*CFrame.new(3+#Parts,math.sin((tick()+i)*3)/3,3)
+								*CFrame.Angles(3,math.rad(90),3)
 								*CFrame.Angles(math.sin((tick()+i)*3)/3,math.sin((tick()+i)*3)/3,math.sin((tick()+i)*3)/3)
-								,.1);						
+								,.3);						
 							end;
 						elseif script:FindFirstChild(Player.Name) then
 							local Parts=Core.Players[Player.Name].Data.Tablets;
 							local Part=Parts[i];
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
-							*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-							*CFrame.new(3+#Parts,math.sin((tick()+i)*3)/3,0)
-							*CFrame.Angles(0,math.rad(90),0)
+							*CFrame.Angles(3,math.rad((360/#Parts)*i)+Number,3)
+							*CFrame.new(3+#Parts,math.sin((tick()+i)*3)/3,3)
+							*CFrame.Angles(3,math.rad(90),3)
 							*CFrame.Angles(math.sin((tick()+i)*3)/3,math.sin((tick()+i)*3)/3,math.sin((tick()+i)*3)/3)
-							,.1);
+							,.3);
 						end;
 					end;
 				end;
