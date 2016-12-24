@@ -271,7 +271,7 @@ local function AddPart(Text,Colour,Player,Function)
 	end;
 	local Part=Instance.new("Part",script);
 	Part.CanCollide=false;
-Part.Transparency = 0.5
+Part.Transparency = 1
 	Part.Anchored=true;
 	Part.FormFactor="Custom";
 	Part.Size=Vector3.new(2,2,2);
@@ -281,7 +281,7 @@ Orb.BottomSurface = "Smooth"
 Orb.TopSurface = "Smooth"
 Orb.Shape = "Ball"
 Orb.Name = "Orb"
-Orb.Transparency = 0
+Orb.Transparency = 1
 Orb.FormFactor = "Custom"
 Orb.Size = Vector3.new(1,1,1)
 Orb.Locked = true
@@ -303,7 +303,7 @@ Orb.Anchored = true
 		SelectionFrame.Color=BrickColor.new(Colour);
 	end;
 	Part.BrickColor=SelectionFrame.Color;
-	SelectionFrame.Transparency=0.8;
+	SelectionFrame.Transparency=0;
 	local Light=Instance.new("PointLight",Part);
 	Light.Color=BrickColor.new(Colour).Color;
 	Light.Brightness=100;
