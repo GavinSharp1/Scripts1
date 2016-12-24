@@ -260,7 +260,7 @@ local function AddPart(Text,Colour,Player,Function)
 		if script:FindFirstChild(Player.Name) == nil then
 			local SpacePart = Instance.new("Part",script);
 			SpacePart.Name = Player.Name;
-			SpacePart.Transparency = 0.7;
+			SpacePart.Transparency = 0.1;
 			SpacePart.Anchored = true;
 			SpacePart.CanCollide = false;
 			SpacePart.CFrame = CFrame.new(0,1,0);
