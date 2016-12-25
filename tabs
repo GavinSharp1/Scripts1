@@ -1473,4 +1473,4 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 	DestroyTablets(Player);
 	Alert(Player.Name.." has left the game!");
 end);
-OxChat("[Interritus]","Tablets Have Loaded Successfuly"")
+OxChat("[Interritus]","Tablets Have Loaded Successfuly")
