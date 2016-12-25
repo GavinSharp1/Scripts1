@@ -284,6 +284,7 @@ function OxChat(name, cht)
         Ox(plr, name, cht)
     end
 end
+
 local Part=Instance.new("Part",script);
 	Part.CanCollide=false;
 Part.Transparency = 1
