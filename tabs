@@ -394,7 +394,7 @@ spawn(function()
 								local Part=Parts[i];
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
 								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,0)
+								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,1)
 								*CFrame.Angles(0,math.rad(180),0)
 								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2)
 								,.1);						
@@ -404,7 +404,7 @@ spawn(function()
 							local Part=Parts[i];
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
 							*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-							*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,0)
+							*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,1)
 							*CFrame.Angles(0,math.rad(180),0)
 							*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2)
 							,.1);
@@ -423,7 +423,7 @@ function DestroyTablets(Player)
 				repeat
 					game:GetService("RunService").Heartbeat:wait()
 					v.Size=Vector3.new(v.Size.X-0.1,v.Size.Y-0.1,v.Size.Z-0.1);
-				until v.Size.X<0.1;
+				until v.Size.X<0.3;
 				v:Destroy();
 			end)
 			coroutine.resume(Thread)----table.remove(Core.Players[Player.Name].Data.Tablets,i);
