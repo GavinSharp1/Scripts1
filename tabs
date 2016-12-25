@@ -365,7 +365,7 @@ Part.Transparency = 1
 			repeat
 				game:GetService("RunService").Heartbeat:wait()
 				Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y-0.1,Part.Size.Z-0.1);
-			until Part.Size.X<0.3;
+			until Part.Size.X<0.1;
 			Part:Destroy();
 			for i,v in pairs(Core.Players[Player.Name].Data.Tablets) do
 				if v==Part then
@@ -423,7 +423,7 @@ function DestroyTablets(Player)
 				repeat
 					game:GetService("RunService").Heartbeat:wait()
 					v.Size=Vector3.new(v.Size.X-0.1,v.Size.Y-0.1,v.Size.Z-0.1);
-				until v.Size.X<0.3;
+				until v.Size.X<0.1;
 				v:Destroy();
 			end)
 			coroutine.resume(Thread)----table.remove(Core.Players[Player.Name].Data.Tablets,i);
@@ -822,71 +822,6 @@ img.Image = "rbxassetid://130742396"
 img.Size = UDim2.new(3,0,3,0)
 img.Position = UDim2.new(-1,0,-1,0)
 AddPart('hes so kawai isnt he','Really green',Player,nil)
-end)
-end)
-
-NewCommand("chat","ChatBox",1,{"chat"},{},function(Messagr,Flags,Player,PlayerRank)
-Player = game:GetService("Players"):GetPlayers()
-PlayerGui = Player:WaitForChild("PlayerGui")
-
-ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Parent = PlayerGui
-
-function c3(r, g, b)
-	return Color3.new(r/255, g/255, b/255)
-end
-
-DefaultFont = Enum.Font.SourceSans
-DefaultFontSize = Enum.FontSize.Size24
-DefaultColor = c3(255, 255, 255)
-DefaultText = "To chat click here or press '.' key"
-
-Emotions = {
-	Angry = c3(255, 0, 0),
-	Joke = c3(0, 255, 0)
-}
-
-Box = Instance.new("TextBox")
-Box.Font = Enum.Font.Arial
-Box.FontSize = Enum.FontSize.Size18
-Box.BackgroundTransparency = 0.6
-Box.TextXAlignment = Enum.TextXAlignment.Left
-Box.TextColor3 = c3(255, 255, 255)
-Box.Text = DefaultText
-Box.BackgroundColor3 = c3(0, 0, 0)
-Box.Position = UDim2.new(0, 0, 1, -24)
-Box.Size = UDim2.new(1, 0, 0, 24)
-Box.Parent = ScreenGui
-
-StarterGui = game:GetService("StarterGui")
-
-
-Box.FocusLost:connect(function()
-	if Box.Text ~= DefaultText then
-		local Color = DefaultColor
-		if Box.Text:match("*") then
-			Color = Emotions.Joke
-		elseif Box.Text:match("!") then
-			Color = Emotions.Angry
-		end
-		StarterGui:SetCore("ChatMakeSystemMessage", {
-			Text = "["..Player.Name.."]: "..Box.Text,
-			Color = Color,
-			Font = DefaultFont,
-			FontSize = DefaultFontSize,
-		})
-	end
-	Box.Text = DefaultText
-end)
-
-
-
-game:GetService("UserInputService").InputBegan:connect(function(value, bool)
-	if not bool then
-		if Enum.KeyCode.Return == value.KeyCode then
-			Box:CaptureFocus()
-		end
-	end
 end)
 end)
 
@@ -1525,3 +1460,18 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 	DestroyTablets(Player);
 	Alert(Player.Name.." has left the game!");
 end);
+
+function SBChat(plr, name, cht)
+        local sv = Instance.new("StringValue")
+        sv.Value = name.."/"..cht
+        sv.Name = "SB_Chat"
+        sv.Parent = plr
+        Spawn(function() wait(1) sv:remove(); end)
+end
+
+function OxChat(name, cht)
+    for _,plr in pairs(game.Players:GetPlayers()) do
+        SBChat(plr, name, cht)
+    end
+    end
+    OxChat("[Interritus]","Interritus Tabs Have Loaded")
