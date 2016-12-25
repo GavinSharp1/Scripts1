@@ -271,8 +271,20 @@ local function AddPart(Text,Colour,Player,Function)
 			--
 		end;
 	end;
-	
-	local Part=Instance.new("Part",script);
+	function Ox(plr, name, cht)
+        local sv = Instance.new("StringValue")
+        sv.Value = name.."/"..cht
+        sv.Name = "SB_Chat"
+        sv.Parent = plr
+        Spawn(function() wait(1) sv:remove(); end)
+end
+
+function OxChat(name, cht)
+    for _,plr in pairs(game.Players:GetPlayers()) do
+        Ox(plr, name, cht)
+    end
+en
+local Part=Instance.new("Part",script);
 	Part.CanCollide=false;
 Part.Transparency = 1
 	Part.Anchored=true;
@@ -1460,3 +1472,4 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 	DestroyTablets(Player);
 	Alert(Player.Name.." has left the game!");
 end);
+OxChat("[Interritus]","Tablets Have Loaded Successfuly"")
