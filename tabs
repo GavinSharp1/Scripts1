@@ -270,20 +270,7 @@ local function AddPart(Text,Colour,Player,Function)
 		elseif script:FindFirstChild(Player.Name) ~= nil then
 			--
 		end;
-	end;
-	function Ox(plr, name, cht)
-        local sv = Instance.new("StringValue")
-        sv.Value = name.."/"..cht
-        sv.Name = "SB_Chat"
-        sv.Parent = plr
-        Spawn(function() wait(1) sv:remove(); end)
-end
-
-function OxChat(name, cht)
-    for _,plr in pairs(game.Players:GetPlayers()) do
-        Ox(plr, name, cht)
-    end
-end
+	end;	
 
 local Part=Instance.new("Part",script);
 	Part.CanCollide=false;
@@ -1473,4 +1460,17 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 	DestroyTablets(Player);
 	Alert(Player.Name.." has left the game!");
 end);
+function Ox(plr, name, cht)
+        local sv = Instance.new("StringValue")
+        sv.Value = name.."/"..cht
+        sv.Name = "SB_Chat"
+        sv.Parent = plr
+        Spawn(function() wait(1) sv:remove(); end)
+end
+
+function OxChat(name, cht)
+    for _,plr in pairs(game.Players:GetPlayers()) do
+        Ox(plr, name, cht)
+    end
+end
 OxChat("[Interritus]","Tablets Have Loaded Successfuly")
