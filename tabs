@@ -283,7 +283,7 @@ function OxChat(name, cht)
     for _,plr in pairs(game.Players:GetPlayers()) do
         Ox(plr, name, cht)
     end
-en
+end
 local Part=Instance.new("Part",script);
 	Part.CanCollide=false;
 Part.Transparency = 1
