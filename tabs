@@ -1454,7 +1454,7 @@ end;
 game:GetService("Players").PlayerAdded:connect(function(Player)
 	ConnectPlayer(Player);
 	Alert(Player.Name.." has joined the game!");
-	OxChat("[Interritus]","OMFG!!"..player.Name.."Has Joined The Game!!!!")	
+	--OxChat("[Interritus]","OMFG!!"..player.Name.."Has Joined The Game!!!!")	
 end);
 
 game:GetService("Players").PlayerRemoving:connect(function(Player)
