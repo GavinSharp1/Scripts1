@@ -665,9 +665,10 @@ wait()
 										NewSong:Play();
 										NewSong.Name=Assets[i].AssetId;
 										Core.Data.SongPlaying={ID=Assets[i].AssetId,Name=Assets[i].Name};
-																				
-function Pause()
-											wait(DestroyTablets(Player));											AddPart("Stop","Really red",Player,function()
+										
+										function Pause()
+											wait(DestroyTablets(Player));
+											AddPart("Stop","Really red",Player,function()
 												DestroyTablets(Player);
 												wait(NewSong:Stop());
 												NewSong:Destroy();
@@ -707,7 +708,9 @@ end)
 								NewSong:Play();
 								NewSong.Name=Assets[i].AssetId;
 								Core.Data.SongPlaying={ID=Assets[i].AssetId,Name=Assets[i].Name};
-								function Pauses()
+																
+									Ox('Now playing:'..Assets[i].Name..' ')	
+									function Pauses()
 									wait(DestroyTablets(Player));
 
 AddPart("Now playing : "..Assets[i].Name,Core.Players[Player.Name].Data.Colour,Player,function() end);
