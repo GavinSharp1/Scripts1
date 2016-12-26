@@ -253,7 +253,7 @@ for _,v in pairs(game.Players:GetPlayers()) do
  if v:IsA('Player') then 
 local msg = Instance.new('StringValue',v) 
 msg.Name = "SB_Chat" 
-msg.Value = 'Test/'..Message..' '
+msg.Value = '[Interritus]/'..Message..' '
  end 
 end
 end
@@ -649,13 +649,12 @@ end);
 end);
 							AddPart('ID is: '..Assets[i].AssetId,Core.Players[Player.Name].Data.Colour,Player,function() end);
 							AddPart('Play song','Lime green',Player,function()
+												
 								if Core.Data.SongPlaying ~= nil then
 									DestroyTablets(Player);
 									AddPart("A song is already playing : "..Core.Data.SongPlaying.Name..". Would you like to stop it?",Core.Players[Player.Name].Data.Colour,Player,function() end);
 									AddPart("Yes","Bright green",Player,function()
 wait()
-
-Ox('Now playing:'..Core.Data.SongPlaying.Name..' ')
 										DestroyTablets(Player);
 										local Song=script.Songs:FindFirstChild(tostring(Core.Data.SongPlaying.ID));
 										wait(Song:Stop());
@@ -666,7 +665,8 @@ Ox('Now playing:'..Core.Data.SongPlaying.Name..' ')
 										NewSong:Play();
 										NewSong.Name=Assets[i].AssetId;
 										Core.Data.SongPlaying={ID=Assets[i].AssetId,Name=Assets[i].Name};
-										function Pause()
+																				
+function Pause()
 											wait(DestroyTablets(Player));											AddPart("Stop","Really red",Player,function()
 												DestroyTablets(Player);
 												wait(NewSong:Stop());
@@ -681,6 +681,7 @@ Ox('Now playing:'..Core.Data.SongPlaying.Name..' ')
 													DestroyTablets(Player)
 													NewSong:Play();
 													AddPart("Playing "..Assets[i].Name,"Bright blue",Player,function() end);
+													
 													Pause()
 												end);
 end)
