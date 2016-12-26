@@ -331,7 +331,7 @@ Part.Transparency = 0.5
 		if PlayerE.Name==Player.Name then
 			for i=1,4 do
 				game:GetService("RunService").Heartbeat:wait()
-				Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y+0.1,Part.Size.Z+0.1);
+				Part.Size=Vector3.new(Part.Size.X+0.1,Part.Size.Y+0.1,Part.Size.Z+0.1);
 			end;
 		end;
 	end);
@@ -339,7 +339,7 @@ Part.Transparency = 0.5
 		if PlayerE.Name==Player.Name then
 			for i=1,1 do
 				game:GetService("RunService").Heartbeat:wait()
-				Part.Size=Vector3.new(Part.Size.X-0.2,Part.Size.Y-0.2,Part.Size.Z-0.2);
+				Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y-0.1,Part.Size.Z-0.1);
 			end;
 		end;	
 	end);
@@ -371,7 +371,7 @@ Part.Transparency = 0.5
 			wait(4);
 			repeat
 				game:GetService("RunService").Heartbeat:wait()
-				Part.Size=Vector3.new(Part.Size.X+0.1,Part.Size.Y-0.1,Part.Size.Z-0.1);
+				Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y-0.1,Part.Size.Z-0.1);
 			until Part.Size.X<0.3;
 			Part:Destroy();
 			for i,v in pairs(Core.Players[Player.Name].Data.Tablets) do
@@ -402,7 +402,7 @@ spawn(function()
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
 								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
 								*CFrame.new(2+#Parts,math.sin((tick()+i)*1)/1,0)
-								*CFrame.Angles(0,math.rad(1),0)
+								*CFrame.Angles(0,math.rad(180),0)
 								*CFrame.Angles(math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0)
 								,.1);						
 							end;
@@ -412,7 +412,7 @@ spawn(function()
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
 						*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
 								*CFrame.new(2+#Parts,math.sin((tick()+i)*1)/1,0)
-								*CFrame.Angles(0,math.rad(1),0)
+								*CFrame.Angles(0,math.rad(180),0)
 								*CFrame.Angles(math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0)
 								,.1);					
 								end;
