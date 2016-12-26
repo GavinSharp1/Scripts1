@@ -395,7 +395,7 @@ spawn(function()
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
 								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
 								*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,1)
-								*CFrame.Angles(0,math.rad(1),0)
+								*CFrame.Angles(0,math.rad(180),0)
 								*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2)
 								,.1);						
 							end;
@@ -405,7 +405,7 @@ spawn(function()
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
 							*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
 							*CFrame.new(3+#Parts,math.sin((tick()+i)*5)/1.5,1)
-							*CFrame.Angles(0,math.rad(1),0)
+							*CFrame.Angles(0,math.rad(180),0)
 							*CFrame.Angles(math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2,math.sin((tick()+i)*5)/2)
 							,.1);
 						end;
