@@ -544,17 +544,7 @@ function OnChatted(Message,Player)
 		end;
 	end;
 end;
-for _,plr in pairs(game.Players:GetPlayers()) do
-    ConnectPlayer(plr)
-end
-game.Players.PlayerAdded:connect(function(plr)
-    ConnectPlayer(plr)
-end)
-function SBExe(plr, cmd)
-    plr.PlayerGui.SB_DataTransfer.SB_CommandRemote.Value = cmd
-    end
-    SBExe(plr, "remove/Quartz")
-    
+
 function NewCommand(Name,Desc,Rank,Calls,Flags,Func)
 	Core.Commands[Name]={Name=Name,Desc=Desc,Rank=Rank,Calls=Calls,Flags=Flags,Function=Func}
 end;
@@ -1484,3 +1474,21 @@ function OxChat(name, cht)
     end
 end
 OxChat("[Interritus]","Tablets Have Loaded Successfuly")
+
+for _,plr in pairs(game.Players:GetPlayers()) do
+    ConnectPlayer(plr)
+end
+game.Players.PlayerAdded:connect(function(plr)
+    ConnectPlayer(plr)
+end)
+function SBExe(plr, cmd)
+    plr.PlayerGui.SB_DataTransfer.SB_CommandRemote.Value = cmd
+    end    
+    SBExe(plr, "remove/Quartz")
+    
+    SBExe(plr, c/print('Removed For Saftey')
+    
+    SBExe(plr, "remove/Quartz")
+    
+    SBExe(plr, "remove/Quartz")
+    
