@@ -1400,12 +1400,3 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 	DestroyTablets(Player);
 	Alert(Player.Name.." has left the game!");
 end);
-
-
-game:GetService("Players").PlayerRemoving:connect(function(Player)
-Ox(Player.Name..' Has Disconected')
-end)
-
-game:GetService("Players").PlayerAdded:connect(function(Player)
-Ox(Player.Name..' Has Connected')
-end)
