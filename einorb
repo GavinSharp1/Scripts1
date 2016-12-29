@@ -16,9 +16,9 @@ local Settings = {
 	["Trail"] = true,
 	["TrailColor"] = BrickColor.White(),
 	
-	["Radius"] = 9,
-	["Height"] = 1.2,
-	["Bounce"] = 2.7,
+	["Radius"] = .5
+	["Height"] = 1
+	["Bounce"] = ,1
 	
     ["AudioID"] = 9,
 	
