@@ -382,8 +382,8 @@ Part.Transparency = 0.5
 		end);
 		coroutine.resume(InternalThread);
 	end;
-end;	
---//Rotation
+end;
+--/Rotation
 spawn(function()
 	local Number=1;
 	local Player=nil;
@@ -400,21 +400,21 @@ spawn(function()
 								local Part=Parts[i];
 								Part.CFrame=CLerp(Part.CFrame,CFrame.new(game.Workspace[v.Name].Torso.CFrame.p)
 								*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-								*CFrame.new(2+#Parts,math.sin((tick()+i)*1)/1,0)
-								*CFrame.Angles(0,math.rad(1),0)
-								*CFrame.Angles(math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0)
+								*CFrame.new(2+#Parts,math.sin((tick()+i)*2)/2,0)
+								*CFrame.Angles(0,math.rad(9),0)
+								*CFrame.Angles(math.sin((tick()+i)*2)/2,math.sin((tick()+i)*2)/2,math.sin((tick()+i)*2)/2)
 								,.1);						
 							end;
 						elseif script:FindFirstChild(Player.Name) then
 							local Parts=Core.Players[Player.Name].Data.Tablets;
 							local Part=Parts[i];
 							Part.CFrame=CLerp(Part.CFrame,CFrame.new(script:FindFirstChild(Player.Name).CFrame.p)
-						*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
-								*CFrame.new(2+#Parts,math.sin((tick()+i)*1)/1,0)
-								*CFrame.Angles(0,math.rad(1),0)
-								*CFrame.Angles(math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0,math.sin((tick()+i)*0)/0)
-								,.1);					
-								end;
+							*CFrame.Angles(0,math.rad((360/#Parts)*i)+Number,0)
+							*CFrame.new(2+#Parts,math.sin((tick()+i)*2)/2,0)
+							*CFrame.Angles(0,math.rad(9),0)
+							*CFrame.Angles(math.sin((tick()+i)*2)/2,math.sin((tick()+i)*2)/2,math.sin((tick()+i)*2)/2)
+							,.1);
+						end;
 					end;
 				end;
 			end;
