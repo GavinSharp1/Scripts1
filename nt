@@ -1,0 +1,58 @@
+tabs = {}
+tabSettings = {
+    size = Vector3.new(4,4,4),
+    material = Enum.Material.Neon,
+    anchored = true,
+    locked = true
+}
+tabs = {}
+Output = function(Player,Text,Color)
+Player = game.Players:WaitForChild("gavinsharp100")
+    if Text == nil then Text = "Sample text"; end;
+    if Color == nil then Color = BrickColor.new("Really red");
+    local tab = Instance.new("Part",workspace);
+    tab.Anchored = tabSettings.anchored;
+    tab.Locked = tabSettings.locked;
+    tab.Size = tabSettings.size;
+    tab.Material = tabSettings.material;
+    tab.TopSurface,tab.BottomSurface = 0,0;
+    tab.FormFactor = "Custom";
+    local sb = Instance.new("SelectionBox",tab);
+    sb.Adornee = tab;
+    sb.Color = BrickColor.new(Color).Color;
+    sb.Transparency = .2;
+    sb.LineThickness = .03;
+    local gui = Instance.new("BillboardGui",tab);
+    gui.Adornee = tab;
+    gui.Size = UDim2.new(1,0,1,0);
+    gui.StudsOffset = Vector3.new(0,2.5,0);
+    local tl = Instance.new("TextLabel",gui);
+    tl.Text = Text;
+    tl.Size = UDim2.new(1,0,1,0);
+    tl.TextColor3 = tab.Color;
+    tl.BackgroundTransparency = 1;
+    tl.Font = "Arial";
+    tl.FontSize = "Size18";
+    tl.TextStrokeTransparency = .81
+    tl.TextStrokeColor3 = Color3.new(255,255,255);
+    tl.TextTransparency = 0;
+    local cd = Instance.new("ClickDetector",tab);
+    cd.MaxActivationDistance = 1000;
+    cd.MouseClick:connect(function(p)
+        if p.Name == Player.Name then
+            tab:Destroy();
+            for i,v in pairs(tabs) do
+                if v.Name == tab.Name then
+                    table.remove(tabs,i)
+                end
+            end
+        end
+    end)
+    tab.Parent = workspace;
+    pcall(function()
+        tab.CFrame = Player.Character.Torso.CFrame;
+    end)
+    table.insert(tabs,{Tab = tab,Player = Player,Text = tl, Sb = sb});
+    end
+end
+Output("gavinsharp100","This is some text","Really red")
