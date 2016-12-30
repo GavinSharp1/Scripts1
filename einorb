@@ -87,19 +87,19 @@ end
 rgb()
 end))
 
-local i = 0
+local l = 0
 
 game:GetService("RunService").Heartbeat:connect(function()
-    if i >= 360 then
-        i = 0 
-        else i = i + 1
+    if l >= 360 then
+        l = 0 
+        else l = l + 1
     end    
-    Orb.CFrame = CFrame.new(owner.Character.Torso.CFrame.p) * CFrame.Angles(0,math.rad(i),0) *CFrame.new(0,0,-5)
+    Orb.CFrame = CFrame.new(owner.Character.Torso.CFrame.p) * CFrame.Angles(0,math.rad(l),0) *CFrame.new(0,0,-5)
 end)
 
 function fade(p)
     wait(0.4)
-    for i = 1,20 do
+    for l = 1,20 do
 
         game:service'RunService'.Heartbeat:wait()
         p.Transparency = p.Transparency + 0.1 if p.Transparency == 1 then break end
