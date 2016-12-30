@@ -1,7 +1,7 @@
 
 local Orb = Instance.new("Part",workspace)
-Orb.Size = Vector3.new(5,5,5)
-Orb.Transparency = 1
+Orb.Size = Vector3.new(2,2,2)
+Orb.Transparency = 0
 Orb.CanCollide = false
 Orb.Anchored = true
 Orb.BottomSurface = "Smooth"
@@ -67,9 +67,6 @@ Orb["5"].Frame.BackgroundColor3 = Color3.new(80/255,80/255,i/255)
 Orb["6"].Frame.BackgroundColor3 = Color3.new(80/255,80/255,i/255)
 wait()	
 end
-return rgb()
-end
-rgb()
 end
 
 local l = 0
