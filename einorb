@@ -7,19 +7,6 @@ Orb.Anchored = true
 Orb.BottomSurface = "Smooth"
 Orb.TopSurface = "Smooth"
 
-
-
-coroutine.resume(coroutine.create(function ()
-local function rotate()
-for i=1, 360 do
-Orb.CFrame = part.CFrame *CFrame.fromEulerAnglesXYZ(i/50,i/10,i/10)
-wait()
-end		
-return rotate()
-end	
-rotate()
-end))
-
 for i=1, 6 do
 local surface  = Instance.new("SurfaceGui", Orb)
 surface.Name = i
@@ -42,8 +29,7 @@ frame.Size = UDim2.new(1,0,1,0)
 frame.ZIndex = 0
 end
 
-
-coroutine.resume(coroutine.create(function ()
+while true do
 function rgb()
 for i=80,255 do
 Orb["1"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
@@ -83,9 +69,8 @@ wait()
 end
 return rgb()
 end
-
 rgb()
-end))
+end
 
 local l = 0
 
