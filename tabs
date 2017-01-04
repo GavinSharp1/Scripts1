@@ -294,7 +294,37 @@ Part.Transparency = 0.5
 	Part.RightSurface="SmoothNoOutlines";
 	Part.TopSurface="SmoothNoOutlines";
 	Part.Locked=true;
-	local SelectionFrame=Instance.new("SelectionBox",Part);
+	
+	for i=1, 6 do
+local surface  = Instance.new("SurfaceGui", part)
+surface.Name = i
+if i == 1 then
+surface.Face = "Front"
+elseif i == 2 then
+surface.Face = "Back"		
+elseif i == 3 then
+surface.Face = "Bottom"	
+elseif i == 4 then
+surface.Face = "Left"	
+elseif i == 5 then
+surface.Face = "Right"	
+elseif i == 6 then
+surface.Face = "Top"		
+end
+local frame = Instance.new("Frame", surface)
+frame.BorderSizePixel = 0
+frame.Size = UDim2.new(1,0,1,0)
+frame.ZIndex = 0
+end
+i = 100
+cube["1"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+cube["2"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+cube["3"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+cube["4"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+cube["5"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+cube["6"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)		
+
+local SelectionFrame=Instance.new("SelectionBox",Part);
 	SelectionFrame.Adornee=Part;
 	if Colour=="Random" then
 		SelectionFrame.Color=BrickColor.Random();
