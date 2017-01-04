@@ -317,12 +317,12 @@ frame.Size = UDim2.new(1,0,1,0)
 frame.ZIndex = 0
 end
 i = 100
-cube["1"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
-cube["2"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
-cube["3"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
-cube["4"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
-cube["5"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
-cube["6"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)		
+Part["1"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+Part["2"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+Part["3"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+Part["4"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+Part["5"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)
+Part["6"].Frame.BackgroundColor3 = Color3.new(i/255,i/255,0)		
 
 local SelectionFrame=Instance.new("SelectionBox",Part);
 	SelectionFrame.Adornee=Part;
