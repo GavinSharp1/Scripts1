@@ -1,0 +1,35 @@
+ --MODULE
+Instance.new("RemoteEvent", game.ReplicatedStorage).Name = "LocalChat"
+script.ChatLocal:Clone().Parent = game.StarterPack
+for _,v in next, game.Players:GetPlayers() do
+script.ChatLocal:Clone().Parent = v.Backpack
+end
+while wait() do
+if not game.StarterPack:FindFirstChild("ChatLocal") then
+asd = script.ChatLocal:Clone()
+asd.Parent = game.StarterPack
+end
+if not game.ReplicatedStorage:FindFirstChild("LocalChat") then
+Instance.new("RemoteEvent", game.ReplicatedStorage).Name = "LocalChat"
+end
+end
+
+
+return nil;
+
+
+
+
+--LOCAL
+
+function say(...)
+local Data = {...}
+game:GetService("StarterGui"):SetCore("ChatMakeSystemMessage",{
+       Text =Data[1];
+       Color = Data[2];
+       Font = Data[3];
+       FontSize = Data[4];})
+end
+game.ReplicatedStorage.LocalChat.OnClientEvent:connect(function(Data)
+say(Data[1], Data[2], Data[3], Data[4])
+end)  
